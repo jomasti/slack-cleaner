@@ -1,6 +1,6 @@
 # slack-cleaner
 
-Bulk delete messages on Slack.
+Bulk delete messages and files on Slack.
 
 ## Install
 
@@ -28,8 +28,9 @@ slack-cleaner --token <TOKEN> --message --group hr --user "*"
 # Delete all messages from a direct message channel
 slack-cleaner --token <TOKEN> --message --direct sherry --user johndoe
 
-# Delete all messages from a multiparty direct message channel
-slack-cleaner --token <TOKEN> --message --mpdirect sherry,james --user "*" 
+# Delete all messages from a multiparty direct message channel. Note that the
+# list of usernames must contains yourself
+slack-cleaner --token <TOKEN> --message --mpdirect sherry,james,johndoe --user "*" 
 
 # Delete all messages from certain user
 slack-cleaner --token <TOKEN> --message --channel gossip --user johndoe
@@ -39,6 +40,15 @@ slack-cleaner --token <TOKEN> --message --channel auto-build --bot
 
 # Delete all messages older than 2015/09/19
 slack-cleaner --token <TOKEN> --message --channel general --user "*" --before 20150919
+
+# Delete all files
+slack-cleaner --token <TOKEN> --file --user "*"
+
+# Delete all files from certain user
+slack-cleaner --token <TOKEN> --file --user johndoe
+
+# Delete all snippets and images
+slack-cleaner --token <TOKEN> --file --types snippets,images
 
 # Always have a look at help message
 slack-cleaner --help
@@ -64,4 +74,4 @@ InsecurePlatformWarning: A true SSLContext object is not available.
 
 ## Credits
 
-**To all the struggling :cry: startup founders who can only afford free plan.**
+**To all the people who can only afford a free plan. :cry:**
